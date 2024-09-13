@@ -1,101 +1,127 @@
+import Link from "next/link";
+import CarouselClient from "./_view/carousel-client";
+import { CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+	return (
+		<>
+			<nav className="flex justify-start p-6 font-normal text-sm">
+				<h1>조한빈 포트폴리오</h1>
+			</nav>
+			<main className="max-w-[1080px] w-full mx-auto p-4 bg-gray-50 min-h-screen">
+				{/* 시너지 */}
+				<div className="flex gap-4 mb-4 justify-between items-center">
+					<Link
+						href="https://synergy10.vercel.app/"
+						target="_blank"
+						className="text-2xl inline-block  hover:underline"
+					>
+						시너지
+					</Link>
+					<div className="relative h-5 w-5">
+						<Link
+							href="https://github.com/sprint-part3-team10/tenten"
+							target="_blank"
+						>
+							<Image src="/github-mark.png" alt="깃헙 레포지토리" fill />
+						</Link>
+					</div>
+				</div>
+				<CarouselClient>
+					<CarouselContent className="-ml-4 mb-4">
+						<CarouselItem className="basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/synergy-infinite-scroll.gif"
+									alt="시너지 무한스크롤 이미지"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+						<CarouselItem className="basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/loading-handling.gif"
+									alt="시너지 로딩 처리"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+						<CarouselItem className="basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/recent-recruits.jpg"
+									alt="시너지 최근본공고"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+					</CarouselContent>
+				</CarouselClient>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+				{/* 띄워 보낸 편지 */}
+				<div className="flex gap-4 mb-4 justify-between items-center">
+					<Link
+						href="https://letters-set-afloat.vercel.app/"
+						target="_blank"
+						className="text-2xl inline-block  hover:underline"
+					>
+						띄워 보낸 편지
+					</Link>
+					<div className="relative h-5 w-5">
+						<Link
+							href="https://github.com/forestream/letters-set-afloat"
+							target="_blank"
+						>
+							<Image src="/github-mark.png" alt="깃헙 레포지토리" fill />
+						</Link>
+					</div>
+				</div>
+				<CarouselClient>
+					<CarouselContent className="-ml-4 mb-4">
+						<CarouselItem className="basis-2/3 pl-4 relative right-20">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/synergy-infinite-scroll.gif"
+									alt="시너지 무한스크롤 이미지"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+						<CarouselItem className="basis-2/3 pl-4 relative right-20">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/loading-handling.gif"
+									alt="시너지 로딩 처리"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+						<CarouselItem className="basis-2/3 pl-4 relative right-20">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/recent-recruits.jpg"
+									alt="시너지 최근본공고"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+					</CarouselContent>
+				</CarouselClient>
+			</main>
+		</>
+	);
 }
