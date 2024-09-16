@@ -9,7 +9,7 @@ export default function Home() {
 			<nav className="flex justify-start p-6 font-normal text-sm">
 				<h1>조한빈 포트폴리오</h1>
 			</nav>
-			<main className="max-w-[1080px] w-full mx-auto p-4 bg-gray-50 min-h-screen">
+			<main className="max-w-[1080px] w-full mx-auto p-4 min-h-screen">
 				{/* 시너지 */}
 				<div className="flex gap-4 mb-4 justify-between items-center">
 					<Link
@@ -28,8 +28,8 @@ export default function Home() {
 						</Link>
 					</div>
 				</div>
-				<CarouselClient>
-					<CarouselContent className="-ml-4 mb-4">
+				<CarouselClient className="mb-16">
+					<CarouselContent className="-ml-4">
 						<CarouselItem className="basis-2/3 pl-4">
 							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image

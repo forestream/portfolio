@@ -31,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang="ko">
 			<body
-				className={`${notoSans.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${notoSans.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
 			>
 				{children}
 			</body>
