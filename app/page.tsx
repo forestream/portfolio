@@ -86,33 +86,33 @@ export default function Home() {
 				</div>
 				<CarouselClient>
 					<CarouselContent className="-ml-4 mb-4">
-						<CarouselItem className="basis-2/3 pl-4 relative right-20">
+						<CarouselItem className="basis-2/3 pl-4">
 							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/synergy-infinite-scroll.gif"
+									src="https://forestream.github.io/image-bank/lsa-replying.gif"
 									alt="시너지 무한스크롤 이미지"
 									fill
 									unoptimized
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4 relative right-20">
+						<CarouselItem className="basis-2/3 pl-4">
 							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/loading-handling.gif"
+									src="https://forestream.github.io/image-bank/lsa-sending.gif"
 									alt="시너지 로딩 처리"
 									fill
 									unoptimized
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4 relative right-20">
+						<CarouselItem className="basis-2/3 pl-4">
 							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/recent-recruits.jpg"
+									src="https://forestream.github.io/image-bank/lsa-report.gif"
 									alt="시너지 최근본공고"
 									fill
 									unoptimized
