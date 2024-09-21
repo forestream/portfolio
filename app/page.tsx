@@ -121,6 +121,62 @@ export default function Home() {
 						</CarouselItem>
 					</CarouselContent>
 				</CarouselClient>
+
+				{/* 동그리나 */}
+				<div className="flex gap-4 mb-4 justify-between items-center">
+					<Link
+						href="https://letters-set-afloat.vercel.app/"
+						target="_blank"
+						className="text-2xl inline-block  hover:underline"
+					>
+						동그리나
+					</Link>
+					<div className="relative h-5 w-5">
+						<Link
+							href="https://github.com/forestream/letters-set-afloat"
+							target="_blank"
+						>
+							<Image src="/github-mark.png" alt="깃헙 레포지토리" fill />
+						</Link>
+					</div>
+				</div>
+				<CarouselClient>
+					<CarouselContent className="-ml-4 mb-4">
+						<CarouselItem className="basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/donggrina-calendar.gif"
+									alt="동그리나 달력 컴포넌트"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+						<CarouselItem className="basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/donggrina-calendar-add.gif"
+									alt="동그리나 일정 생성, 삭제"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+						<CarouselItem className="basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+								<Image
+									style={{ objectFit: "contain" }}
+									src="https://forestream.github.io/image-bank/donggrina-todo-edit.gif"
+									alt="동그리나 일정 수정"
+									fill
+									unoptimized
+								/>
+							</div>
+						</CarouselItem>
+					</CarouselContent>
+				</CarouselClient>
 			</main>
 		</>
 	);
