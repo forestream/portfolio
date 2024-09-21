@@ -6,9 +6,6 @@ import Image from "next/image";
 export default function Home() {
 	return (
 		<>
-			<nav className="flex justify-start p-6 font-normal text-sm">
-				<h1>조한빈 포트폴리오</h1>
-			</nav>
 			<main className="max-w-[1080px] w-full mx-auto p-4 min-h-screen">
 				{/* 시너지 */}
 				<div className="flex gap-4 mb-4 justify-between items-center">
@@ -19,7 +16,7 @@ export default function Home() {
 					>
 						시너지
 					</Link>
-					<div className="relative h-5 w-5">
+					<div className="relative h-5 w-5 hover:opacity-70">
 						<Link
 							href="https://github.com/sprint-part3-team10/tenten"
 							target="_blank"
@@ -75,7 +72,7 @@ export default function Home() {
 					>
 						띄워 보낸 편지
 					</Link>
-					<div className="relative h-5 w-5">
+					<div className="relative h-5 w-5 hover:opacity-70">
 						<Link
 							href="https://github.com/forestream/letters-set-afloat"
 							target="_blank"
@@ -131,7 +128,7 @@ export default function Home() {
 					>
 						동그리나
 					</Link>
-					<div className="relative h-5 w-5">
+					<div className="relative h-5 w-5 hover:opacity-70">
 						<Link
 							href="https://github.com/forestream/letters-set-afloat"
 							target="_blank"
