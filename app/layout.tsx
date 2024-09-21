@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Noto_Sans_KR } from "next/font/google";
@@ -36,7 +37,26 @@ export default function RootLayout({
 			<body
 				className={`${notoSans.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
 			>
-				<nav className="flex justify-start p-6 font-normal text-sm"></nav>
+				<nav className="flex justify-start p-6 font-normal text-sm">
+					<div className="flex gap-4">
+						<img
+							src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+							alt=""
+						/>
+						<img
+							src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"
+							alt=""
+						/>
+						<img
+							src="https://img.shields.io/badge/react%20query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white"
+							alt=""
+						/>
+						<img
+							src="https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs&logoColor=white"
+							alt=""
+						/>
+					</div>
+				</nav>
 
 				{children}
 				<footer className="flex justify-end px-6 lg:px-40 py-12 font-bold text-sm">
