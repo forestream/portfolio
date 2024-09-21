@@ -125,7 +125,7 @@ export default function Home() {
 				{/* 동그리나 */}
 				<div className="flex gap-4 mb-4 justify-between items-center">
 					<Link
-						href="https://letters-set-afloat.vercel.app/"
+						href="https://donggrina.vercel.app/calendar"
 						target="_blank"
 						className="text-2xl inline-block  hover:underline"
 					>
