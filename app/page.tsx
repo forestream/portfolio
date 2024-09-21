@@ -15,7 +15,7 @@ export default function Home() {
 					<Link
 						href="https://synergy10.vercel.app/"
 						target="_blank"
-						className="text-2xl inline-block  hover:underline"
+						className="text-2xl font-semibold inline-block  hover:underline"
 					>
 						시너지
 					</Link>
@@ -71,7 +71,7 @@ export default function Home() {
 					<Link
 						href="https://letters-set-afloat.vercel.app/"
 						target="_blank"
-						className="text-2xl inline-block  hover:underline"
+						className="text-2xl font-semibold inline-block  hover:underline"
 					>
 						띄워 보낸 편지
 					</Link>
@@ -127,7 +127,7 @@ export default function Home() {
 					<Link
 						href="https://donggrina.vercel.app/calendar"
 						target="_blank"
-						className="text-2xl inline-block  hover:underline"
+						className="text-2xl font-semibold inline-block  hover:underline"
 					>
 						동그리나
 					</Link>
