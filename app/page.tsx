@@ -84,7 +84,7 @@ export default function Home() {
 						</Link>
 					</div>
 				</div>
-				<CarouselClient>
+				<CarouselClient className="mb-16">
 					<CarouselContent className="-ml-4 mb-4">
 						<CarouselItem className="basis-2/3 pl-4">
 							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
@@ -142,8 +142,8 @@ export default function Home() {
 				</div>
 				<CarouselClient>
 					<CarouselContent className="-ml-4 mb-4">
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="basis-3/5 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/donggrina-calendar.gif"
@@ -153,8 +153,8 @@ export default function Home() {
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="basis-3/5 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/donggrina-calendar-add.gif"
@@ -164,8 +164,8 @@ export default function Home() {
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="basis-3/5 pl-4">
+							<div className="relative border border-neutral-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/donggrina-todo-edit.gif"
