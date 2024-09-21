@@ -12,7 +12,14 @@ export default function CarouselClient({
 	return (
 		<Carousel
 			opts={{ loop: true }}
-			plugins={[AutoScroll({ startDelay: 0, speed: 0.4 })]}
+			plugins={[
+				AutoScroll({
+					startDelay: 0,
+					speed: 0.4,
+					stopOnMouseEnter: true,
+					stopOnInteraction: false,
+				}),
+			]}
 			className={className}
 			{...props}
 		>
