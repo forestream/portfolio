@@ -27,8 +27,8 @@ export default function Home() {
 				</div>
 				<CarouselClient className="mb-16">
 					<CarouselContent className="-ml-4">
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/synergy-infinite-scroll.gif"
@@ -38,22 +38,22 @@ export default function Home() {
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/loading-handling.gif"
+									src="https://forestream.github.io/image-bank/synergy-loading.gif"
 									alt="시너지 로딩 처리"
 									fill
 									unoptimized
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/recent-recruits.jpg"
+									src="https://forestream.github.io/image-bank/synergy-recent.gif"
 									alt="시너지 최근본공고"
 									fill
 									unoptimized
@@ -83,34 +83,34 @@ export default function Home() {
 				</div>
 				<CarouselClient className="mb-16">
 					<CarouselContent className="-ml-4 mb-4">
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/lsa-replying.gif"
-									alt="시너지 무한스크롤 이미지"
+									alt="띄워보낸편지 답글 기능"
 									fill
 									unoptimized
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/lsa-sending.gif"
-									alt="시너지 로딩 처리"
+									alt="띄워보낸편지 보내기 기능"
 									fill
 									unoptimized
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-2/3 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/lsa-report.gif"
-									alt="시너지 최근본공고"
+									src="https://forestream.github.io/image-bank/lsa-login.gif"
+									alt="띄워보낸편지 구글로그인"
 									fill
 									unoptimized
 								/>
@@ -139,10 +139,10 @@ export default function Home() {
 				</div>
 				<CarouselClient>
 					<CarouselContent className="-ml-4 mb-4">
-						<CarouselItem className="basis-3/5 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-3/5 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
-									style={{ objectFit: "contain" }}
+									style={{ objectFit: "contain", scale: "126%" }}
 									src="https://forestream.github.io/image-bank/donggrina-calendar.gif"
 									alt="동그리나 달력 컴포넌트"
 									fill
@@ -150,10 +150,10 @@ export default function Home() {
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-3/5 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-3/5 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
-									style={{ objectFit: "contain" }}
+									style={{ objectFit: "contain", scale: "126%" }}
 									src="https://forestream.github.io/image-bank/donggrina-calendar-add.gif"
 									alt="동그리나 일정 생성, 삭제"
 									fill
@@ -161,10 +161,10 @@ export default function Home() {
 								/>
 							</div>
 						</CarouselItem>
-						<CarouselItem className="basis-3/5 pl-4">
-							<div className="relative border border-neutral-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
+						<CarouselItem className="cursor-pointer basis-3/5 pl-4">
+							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg after:absolute after:inset-0 after:bg-black after:opacity-0 after:hover:opacity-80 after:transition-opacity transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
-									style={{ objectFit: "contain" }}
+									style={{ objectFit: "contain", scale: "126%" }}
 									src="https://forestream.github.io/image-bank/donggrina-todo-edit.gif"
 									alt="동그리나 일정 수정"
 									fill
