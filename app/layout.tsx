@@ -40,20 +40,28 @@ export default function RootLayout({
 				<nav className="flex justify-start p-6 font-normal text-sm">
 					<div className="flex gap-4">
 						<img
-							src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
 							alt=""
-						/>
-						<img
 							src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"
-							alt=""
 						/>
 						<img
-							src="https://img.shields.io/badge/react%20query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white"
 							alt=""
-						/>
-						<img
 							src="https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs&logoColor=white"
+						/>
+						<img
 							alt=""
+							src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+						/>
+						<img
+							alt=""
+							src="https://img.shields.io/badge/tailwind%20css-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"
+						/>
+						<img
+							alt=""
+							src="https://img.shields.io/badge/react%20query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white"
+						/>
+						<img
+							alt=""
+							src="https://img.shields.io/badge/jest-C21325?style=for-the-badge&logo=jest&logoColor=white"
 						/>
 					</div>
 				</nav>
