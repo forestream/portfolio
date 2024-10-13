@@ -24,6 +24,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .scroll-width-none {
+    scrollbar-width: none;
+  }
 }
 
 @layer base {
