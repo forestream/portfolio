@@ -16,17 +16,17 @@ export default function Home() {
 					<Link
 						href="https://synergy10.vercel.app/"
 						target="_blank"
-						className="text-2xl font-semibold hover:underline flex items-center gap-1.5 bg-clip-text bg-gradient-to-br from-yellow-200 to-white text-transparent drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] shadow-yellow-100"
+						className="text-2xl font-semibold hover:underline flex items-center gap-1.5 bg-clip-text bg-gradient-to-br from-yellow-200 to-white text-transparent drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_12px_rgba(255,255,255,1)] shadow-yellow-100 transition-[filter] duration-300"
 					>
 						시너지
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
 					<div className="relative top-1 w-5 h-5">
-						<IconInfoCircle className="fill-white" />
+						<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
 					</div>
-					<div className="grow relative h-5 w-5 hover:opacity-70 flex justify-end">
+					<div className="grow relative h-5 w-5 flex justify-end">
 						<Link
-							className="w-5 h-5"
+							className="w-5 h-5 hover:opacity-70"
 							href="https://github.com/sprint-part3-team10/tenten"
 							target="_blank"
 						>
@@ -95,17 +95,17 @@ export default function Home() {
 					<Link
 						href="https://letters-set-afloat.vercel.app/"
 						target="_blank"
-						className="text-2xl font-semibold hover:underline flex items-center gap-1.5 bg-clip-text bg-gradient-to-br from-yellow-200 to-white text-transparent drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] shadow-yellow-100"
+						className="text-2xl font-semibold hover:underline flex items-center gap-1.5 bg-clip-text bg-gradient-to-br from-yellow-200 to-white text-transparent drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_12px_rgba(255,255,255,1)] shadow-yellow-100 transition-[filter] duration-300"
 					>
 						띄워 보낸 편지
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
 					<div className="relative top-1 w-5 h-5">
-						<IconInfoCircle className="fill-white" />
+						<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
 					</div>
-					<div className="grow relative h-5 w-5 hover:opacity-70 flex justify-end">
+					<div className="grow relative h-5 w-5 flex justify-end">
 						<Link
-							className="w-5 h-5"
+							className="w-5 h-5 hover:opacity-70"
 							href="https://github.com/forestream/letters-set-afloat"
 							target="_blank"
 						>
@@ -170,17 +170,17 @@ export default function Home() {
 					<Link
 						href="https://donggrina.vercel.app/calendar"
 						target="_blank"
-						className="text-2xl font-semibold hover:underline flex items-center gap-1.5 bg-clip-text bg-gradient-to-br from-yellow-200 to-white text-transparent drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] shadow-yellow-100"
+						className="text-2xl font-semibold hover:underline flex items-center gap-1.5 bg-clip-text bg-gradient-to-br from-yellow-200 to-white text-transparent drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_12px_rgba(255,255,255,1)] shadow-yellow-100 transition-[filter] duration-300"
 					>
 						동그리나
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
 					<div className="relative top-1 w-5 h-5">
-						<IconInfoCircle className="fill-white" />
+						<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
 					</div>
-					<div className="grow relative h-5 w-5 hover:opacity-70 flex justify-end">
+					<div className="grow relative h-5 w-5 flex justify-end">
 						<Link
-							className="w-5 h-5"
+							className="w-5 h-5 hover:opacity-70"
 							href="https://github.com/forestream/letters-set-afloat"
 							target="_blank"
 						>
