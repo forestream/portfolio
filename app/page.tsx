@@ -6,6 +6,13 @@ import ProjectDescription from "./_view/project-description";
 import IconNewWindow from "@/components/icon/IconNewWindow";
 import IconInfoCircle from "@/components/icon/IconInfoCircle";
 import IconGithub from "@/components/icon/IconGithub";
+import {
+	Dialog,
+	DialogContent,
+	DialogHeader,
+	DialogTrigger,
+} from "@/components/ui/dialog";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 export default function Home() {
 	return (
@@ -22,7 +29,23 @@ export default function Home() {
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
 					<div className="relative top-1 w-5 h-5">
-						<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
+						<Dialog>
+							<DialogTrigger asChild>
+								<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
+							</DialogTrigger>
+							<DialogContent>
+								<DialogHeader>
+									<DialogTitle>시너지</DialogTitle>
+									<p>개발기간 : 2024년 4월경 약 2주 소요</p>
+									<p>기술스택: Next.js App Router / Typescript / SCSS ...</p>
+									<p>
+										하루 일할 알바를 구하는 플랫폼. 회원가입 유형에 따라 사장과
+										알바로 나뉘어서 페이지 UI는 비슷하지만 유저별로 달라지는
+										기능 관리에 신경 써야 했던 프로젝트입니다.{" "}
+									</p>
+								</DialogHeader>
+							</DialogContent>
+						</Dialog>
 					</div>
 					<div className="grow relative h-5 w-5 flex justify-end">
 						<Link
@@ -101,7 +124,19 @@ export default function Home() {
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
 					<div className="relative top-1 w-5 h-5">
-						<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
+						<Dialog>
+							<DialogTrigger asChild>
+								<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
+							</DialogTrigger>
+							<DialogContent>
+								<DialogHeader>
+									<DialogTitle>띄워 보낸 편지</DialogTitle>
+									<p>개발기간 : 2024년 4월경 </p>
+									<p>기술스택: Next.js App Router / Typescript / SCSS ...</p>
+									<p></p>
+								</DialogHeader>
+							</DialogContent>
+						</Dialog>
 					</div>
 					<div className="grow relative h-5 w-5 flex justify-end">
 						<Link
@@ -176,7 +211,19 @@ export default function Home() {
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
 					<div className="relative top-1 w-5 h-5">
-						<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
+						<Dialog>
+							<DialogTrigger asChild>
+								<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
+							</DialogTrigger>
+							<DialogContent>
+								<DialogHeader>
+									<DialogTitle>동그리나</DialogTitle>
+									<p>개발기간 : 2024년 4월경 </p>
+									<p>기술스택: Next.js App Router / Typescript / SCSS ...</p>
+									<p></p>
+								</DialogHeader>
+							</DialogContent>
+						</Dialog>
 					</div>
 					<div className="grow relative h-5 w-5 flex justify-end">
 						<Link
