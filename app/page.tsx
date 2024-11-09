@@ -31,7 +31,7 @@ export default function Home() {
 				<CarouselClient className="mb-16">
 					<CarouselContent className="-ml-4">
 						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/synergy-infinite-scroll.gif"
@@ -40,15 +40,15 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">
 										무한스크롤 - Intersection Observer API
 									</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
 						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/synergy-loading.gif"
@@ -57,13 +57,15 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">
+										fetch API & 로딩 처리
+									</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
 						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/synergy-recent.gif"
@@ -72,8 +74,10 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">
+										최근본공고(로컬스토리지)
+									</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
@@ -102,7 +106,7 @@ export default function Home() {
 				<CarouselClient className="mb-16">
 					<CarouselContent className="-ml-4 mb-4">
 						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/lsa-replying.gif"
@@ -111,13 +115,15 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">
+										편지 답글 기능
+									</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
 						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/lsa-sending.gif"
@@ -126,13 +132,13 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">편지 띄우기</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
 						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain" }}
 									src="https://forestream.github.io/image-bank/lsa-login.gif"
@@ -141,8 +147,8 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">구글 로그인</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
@@ -171,7 +177,7 @@ export default function Home() {
 				<CarouselClient>
 					<CarouselContent className="-ml-4 mb-4">
 						<CarouselItem className="group cursor-pointer basis-3/5 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain", scale: "126%" }}
 									src="https://forestream.github.io/image-bank/donggrina-calendar.gif"
@@ -180,13 +186,15 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">
+										달력 일자별 일정 표시
+									</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
 						<CarouselItem className="group cursor-pointer basis-3/5 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain", scale: "126%" }}
 									src="https://forestream.github.io/image-bank/donggrina-calendar-add.gif"
@@ -195,13 +203,15 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">
+										일정 생성, 삭제
+									</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
 						<CarouselItem className="group cursor-pointer basis-3/5 pl-4">
-							<div className="relative border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
+							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
 								<Image
 									style={{ objectFit: "contain", scale: "126%" }}
 									src="https://forestream.github.io/image-bank/donggrina-todo-edit.gif"
@@ -210,8 +220,8 @@ export default function Home() {
 									unoptimized
 								/>
 								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-between p-4 ">
-									<p className="font-bold text-xl text-white">프로젝트 설명</p>
+								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+									<p className="font-light text-xl text-white">일정 수정</p>
 								</ProjectDescription>
 							</div>
 						</CarouselItem>
