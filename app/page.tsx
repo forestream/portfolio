@@ -4,13 +4,15 @@ import { CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
 import ProjectDescription from "./_view/project-description";
 import IconNewWindow from "@/components/icon/IconNewWindow";
+import IconInfoCircle from "@/components/icon/IconInfoCircle";
+import IconGithub from "@/components/icon/IconGithub";
 
 export default function Home() {
 	return (
 		<>
 			<main className="max-w-[1080px] w-full mx-auto p-4 min-h-screen">
 				{/* 시너지 */}
-				<div className="flex gap-4 mb-4 justify-between items-center">
+				<div className="flex gap-2 mb-4 justify-between items-center">
 					<Link
 						href="https://synergy10.vercel.app/"
 						target="_blank"
@@ -19,12 +21,16 @@ export default function Home() {
 						시너지
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
-					<div className="relative h-5 w-5 hover:opacity-70">
+					<div className="relative top-1 w-5 h-5">
+						<IconInfoCircle className="fill-white" />
+					</div>
+					<div className="grow relative h-5 w-5 hover:opacity-70 flex justify-end">
 						<Link
+							className="w-5 h-5"
 							href="https://github.com/sprint-part3-team10/tenten"
 							target="_blank"
 						>
-							<Image src="/github-mark.png" alt="깃헙 레포지토리" fill />
+							<IconGithub className="w-full h-full fill-white" />
 						</Link>
 					</div>
 				</div>
@@ -85,7 +91,7 @@ export default function Home() {
 				</CarouselClient>
 
 				{/* 띄워 보낸 편지 */}
-				<div className="flex gap-4 mb-4 justify-between items-center">
+				<div className="flex gap-2 mb-4 justify-between items-center">
 					<Link
 						href="https://letters-set-afloat.vercel.app/"
 						target="_blank"
@@ -94,12 +100,16 @@ export default function Home() {
 						띄워 보낸 편지
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
-					<div className="relative h-5 w-5 hover:opacity-70">
+					<div className="relative top-1 w-5 h-5">
+						<IconInfoCircle className="fill-white" />
+					</div>
+					<div className="grow relative h-5 w-5 hover:opacity-70 flex justify-end">
 						<Link
+							className="w-5 h-5"
 							href="https://github.com/forestream/letters-set-afloat"
 							target="_blank"
 						>
-							<Image src="/github-mark.png" alt="깃헙 레포지토리" fill />
+							<IconGithub className="w-full h-full fill-white" />
 						</Link>
 					</div>
 				</div>
@@ -156,7 +166,7 @@ export default function Home() {
 				</CarouselClient>
 
 				{/* 동그리나 */}
-				<div className="flex gap-4 mb-4 justify-between items-center">
+				<div className="flex gap-2 mb-4 justify-between items-center">
 					<Link
 						href="https://donggrina.vercel.app/calendar"
 						target="_blank"
@@ -165,12 +175,16 @@ export default function Home() {
 						동그리나
 						<IconNewWindow className="relative top-1 fill-white" />
 					</Link>
-					<div className="relative h-5 w-5 hover:opacity-70">
+					<div className="relative top-1 w-5 h-5">
+						<IconInfoCircle className="fill-white" />
+					</div>
+					<div className="grow relative h-5 w-5 hover:opacity-70 flex justify-end">
 						<Link
+							className="w-5 h-5"
 							href="https://github.com/forestream/letters-set-afloat"
 							target="_blank"
 						>
-							<Image src="/github-mark.png" alt="깃헙 레포지토리" fill />
+							<IconGithub className="w-full h-full fill-white" />
 						</Link>
 					</div>
 				</div>
