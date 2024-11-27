@@ -13,6 +13,7 @@ import {
 	DialogTrigger,
 } from "@/components/ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { imageMetadata } from "@/lib/imageMetadata";
 
 export default function Home() {
 	return (
@@ -58,57 +59,28 @@ export default function Home() {
 				</div>
 				<CarouselClient className="mb-16">
 					<CarouselContent className="-ml-4">
-						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/synergy-infinite-scroll.gif"
-									alt="시너지 무한스크롤 이미지"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">
-										무한스크롤 - Intersection Observer API
-									</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
-						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/synergy-loading.gif"
-									alt="시너지 로딩 처리"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">
-										fetch API & 로딩 처리
-									</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
-						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/synergy-recent.gif"
-									alt="시너지 최근본공고"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">
-										최근본공고(로컬스토리지)
-									</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
+						{imageMetadata.synergy.map((metadatum) => (
+							<CarouselItem
+								key={metadatum.src}
+								className="group cursor-pointer basis-2/3 pl-4"
+							>
+								<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+									<Image
+										style={{ objectFit: "contain" }}
+										src={metadatum.src}
+										alt={metadatum.alt}
+										fill
+										unoptimized
+									/>
+									<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
+									<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+										<p className="font-light text-xl text-white">
+											{metadatum.desc}
+										</p>
+									</ProjectDescription>
+								</div>
+							</CarouselItem>
+						))}
 					</CarouselContent>
 				</CarouselClient>
 
@@ -156,53 +128,28 @@ export default function Home() {
 				</div>
 				<CarouselClient className="mb-16">
 					<CarouselContent className="-ml-4 mb-4">
-						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/lsa-replying.gif"
-									alt="띄워보낸편지 답글 기능"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">
-										편지 답글 기능
-									</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
-						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/lsa-sending.gif"
-									alt="띄워보낸편지 보내기 기능"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">편지 띄우기</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
-						<CarouselItem className="group cursor-pointer basis-2/3 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain" }}
-									src="https://forestream.github.io/image-bank/lsa-login.gif"
-									alt="띄워보낸편지 구글로그인"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">구글 로그인</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
+						{imageMetadata.lsa.map((metadatum) => (
+							<CarouselItem
+								key={metadatum.src}
+								className="group cursor-pointer basis-2/3 pl-4"
+							>
+								<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+									<Image
+										style={{ objectFit: "contain" }}
+										src={metadatum.src}
+										alt={metadatum.alt}
+										fill
+										unoptimized
+									/>
+									<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
+									<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+										<p className="font-light text-xl text-white">
+											{metadatum.desc}
+										</p>
+									</ProjectDescription>
+								</div>
+							</CarouselItem>
+						))}
 					</CarouselContent>
 				</CarouselClient>
 
@@ -249,55 +196,28 @@ export default function Home() {
 				</div>
 				<CarouselClient>
 					<CarouselContent className="-ml-4 mb-4">
-						<CarouselItem className="group cursor-pointer basis-3/5 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain", scale: "126%" }}
-									src="https://forestream.github.io/image-bank/donggrina-calendar.gif"
-									alt="동그리나 달력 컴포넌트"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">
-										달력 일자별 일정 표시
-									</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
-						<CarouselItem className="group cursor-pointer basis-3/5 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain", scale: "126%" }}
-									src="https://forestream.github.io/image-bank/donggrina-calendar-add.gif"
-									alt="동그리나 일정 생성, 삭제"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">
-										일정 생성, 삭제
-									</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
-						<CarouselItem className="group cursor-pointer basis-3/5 pl-4">
-							<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
-								<Image
-									style={{ objectFit: "contain", scale: "126%" }}
-									src="https://forestream.github.io/image-bank/donggrina-todo-edit.gif"
-									alt="동그리나 일정 수정"
-									fill
-									unoptimized
-								/>
-								<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
-								<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
-									<p className="font-light text-xl text-white">일정 수정</p>
-								</ProjectDescription>
-							</div>
-						</CarouselItem>
+						{imageMetadata.donggrina.map((metadatum) => (
+							<CarouselItem
+								key={metadatum.src}
+								className="group cursor-pointer basis-3/5 pl-4"
+							>
+								<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-[4/5] object-contain rounded-lg overflow-hidden">
+									<Image
+										style={{ objectFit: "contain", scale: "126%" }}
+										src={metadatum.src}
+										alt={metadatum.alt}
+										fill
+										unoptimized
+									/>
+									<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
+									<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+										<p className="font-light text-xl text-white">
+											{metadatum.src}
+										</p>
+									</ProjectDescription>
+								</div>
+							</CarouselItem>
+						))}
 					</CarouselContent>
 				</CarouselClient>
 			</main>
