@@ -215,7 +215,7 @@ export default function Home() {
 									<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
 									<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
 										<p className="font-light text-xl text-white">
-											{metadatum.src}
+											{metadatum.desc}
 										</p>
 									</ProjectDescription>
 								</div>
