@@ -20,6 +20,78 @@ export default function Home() {
 	return (
 		<>
 			<main className="max-w-[1080px] w-full mx-auto p-4 min-h-screen">
+				{/* 슬리드 투두 */}
+				<div className="flex gap-2 mb-4 justify-between items-center">
+					<Link
+						href="https://slid-todo-xi.vercel.app/"
+						target="_blank"
+						className="text-2xl font-semibold hover:underline flex items-center gap-1.5 bg-clip-text bg-gradient-to-br from-yellow-200 to-white text-transparent drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_12px_rgba(255,255,255,1)] shadow-yellow-100 transition-[filter] duration-300"
+					>
+						슬리드 투두
+						<IconNewWindow className="relative top-1 fill-white" />
+					</Link>
+					<div className="relative top-1 w-5 h-5">
+						<Dialog>
+							<DialogTrigger asChild>
+								<IconInfoCircle className="fill-white cursor-pointer hover:opacity-70 transition-opacity" />
+							</DialogTrigger>
+							<DialogContent>
+								<DialogHeader>
+									<DialogTitle>슬리드 투두</DialogTitle>
+									<DialogDescription>
+										기술스택: Next.js App Router / Typescript / Tailwind CSS /
+										Zustand / Cypress ...
+									</DialogDescription>
+									<DialogDescription>
+										목표별로 할일을 분류하고, 할일마다 노트를 작성할 수 있는
+										할일 관리 서비스입니다. Github Actions를 통해 CI/CD를
+										적용했고, Cypress를 통해서 E2E testing을 진행했습니다.{" "}
+									</DialogDescription>
+									<DialogDescription>
+										<br />
+										작업 영역: 노트 작성/수정페이지, 모달/시트 공통 컴포넌트
+									</DialogDescription>
+								</DialogHeader>
+							</DialogContent>
+						</Dialog>
+					</div>
+					<div className="grow relative h-5 w-5 flex justify-end">
+						<Link
+							className="w-5 h-5 hover:opacity-70"
+							href="https://github.com/FESI-4-4/slid-todo"
+							target="_blank"
+						>
+							<IconGithub className="w-full h-full fill-white" />
+						</Link>
+					</div>
+				</div>
+				<CarouselClient className="mb-16">
+					<CarouselContent className="-ml-4">
+						{imageMetadata.slidTodo.map((metadatum) => (
+							<CarouselItem
+								key={metadatum.src}
+								className="group cursor-pointer basis-2/3 pl-4"
+							>
+								<div className="relative hover:border-neutral-400 hover:shadow-lg transition-colors duration-200 bg-white w-full aspect-video object-contain rounded-lg overflow-hidden">
+									<Image
+										style={{ objectFit: "contain" }}
+										src={metadatum.src}
+										alt={metadatum.alt}
+										fill
+										unoptimized
+									/>
+									<div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity p-4 flex flex-col items-center justify-between"></div>
+									<ProjectDescription className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center p-4 ">
+										<p className="font-light text-xl text-white">
+											{metadatum.desc}
+										</p>
+									</ProjectDescription>
+								</div>
+							</CarouselItem>
+						))}
+					</CarouselContent>
+				</CarouselClient>
+
 				{/* 시너지 */}
 				<div className="flex gap-2 mb-4 justify-between items-center">
 					<Link

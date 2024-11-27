@@ -1,4 +1,26 @@
 export const imageMetadata = {
+	slidTodo: [
+		{
+			src: "https://forestream.github.io/image-bank/slid_animate.gif",
+			alt: "슬리드 투두 애니메이션",
+			desc: "사이드 시트 컴포넌트와 임베드 컴포넌트에 CSS 애니메이션을 적용한 모습입니다.",
+		},
+		{
+			src: "https://forestream.github.io/image-bank/slid_editor.gif",
+			alt: "슬리드 투두 텍스트 에디터",
+			desc: "Tiptap Editor를 활용한 리치 텍스트 에디터 구현",
+		},
+		{
+			src: "https://forestream.github.io/image-bank/slid_embed.gif",
+			alt: "슬리드 투두 링크임베드 기능",
+			desc: "iframe을 사용한 링크임베드 컴포넌트",
+		},
+		{
+			src: "https://forestream.github.io/image-bank/slid_temp_save.gif",
+			alt: "슬리드 투두 노트 임시저장 기능",
+			desc: "로컬스토리지를 활용하여 노트를 임시로 저장할 수 있습니다.",
+		},
+	],
 	synergy: [
 		{
 			src: "https://forestream.github.io/image-bank/synergy-infinite-scroll.gif",
