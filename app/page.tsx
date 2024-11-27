@@ -9,6 +9,7 @@ import IconGithub from "@/components/icon/IconGithub";
 import {
 	Dialog,
 	DialogContent,
+	DialogDescription,
 	DialogHeader,
 	DialogTrigger,
 } from "@/components/ui/dialog";
@@ -37,12 +38,14 @@ export default function Home() {
 							<DialogContent>
 								<DialogHeader>
 									<DialogTitle>시너지</DialogTitle>
-									<p>기술스택: Next.js App Router / Typescript / SCSS ...</p>
-									<p>
+									<DialogDescription>
+										기술스택: Next.js App Router / Typescript / SCSS ...
+									</DialogDescription>
+									<DialogDescription>
 										하루 일할 알바를 구하는 플랫폼. 회원가입 유형에 따라 사장과
 										알바로 나뉘어서 페이지 UI는 비슷하지만 유저별로 달라지는
 										기능 관리에 신경 써야 했던 프로젝트입니다.{" "}
-									</p>
+									</DialogDescription>
 								</DialogHeader>
 							</DialogContent>
 						</Dialog>
@@ -102,16 +105,16 @@ export default function Home() {
 							<DialogContent>
 								<DialogHeader>
 									<DialogTitle>띄워 보낸 편지</DialogTitle>
-									<p>
+									<DialogDescription>
 										기술스택: Next.js App Router / Typescript / Tailwind CSS /
 										Firebase ...
-									</p>
-									<p>
+									</DialogDescription>
+									<DialogDescription>
 										익명의 편지를 바다로 띄워 보낼 수 있는 프로젝트입니다.{" "}
 										<pre className="inline-block">canvas</pre> 태그를 라이브러리
 										없이 사용하여 노을이 지는 이미지와 애니메이션을, firebase로
 										db와 유저기능을 구현했습니다.{" "}
-									</p>
+									</DialogDescription>
 								</DialogHeader>
 							</DialogContent>
 						</Dialog>
@@ -171,15 +174,15 @@ export default function Home() {
 							<DialogContent>
 								<DialogHeader>
 									<DialogTitle>동그리나</DialogTitle>
-									<p>
+									<DialogDescription>
 										기술스택: Next.js Pages Router / Typescript / Zustand /
 										React Query / SCSS ...
-									</p>
-									<p>
+									</DialogDescription>
+									<DialogDescription>
 										백엔드 개발자와 디자이너와 협업으로 진행한 프로젝트입니다.
 										가족 단위로 반려동물과 관련된 일정을 공유할 수 있는
 										서비스입니다.{" "}
-									</p>
+									</DialogDescription>
 								</DialogHeader>
 							</DialogContent>
 						</Dialog>
