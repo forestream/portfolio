@@ -34,8 +34,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<body
+			{/* <body
 				className={`${notoSans.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-t from-orange-950 from-10% via-red-900 via-30% to-blue-950 to-90%`}
+			> */}
+			<body
+				className={`${notoSans.className} ${geistSans.variable} ${geistMono.variable}`}
 			>
 				<nav className="w-full overflow-scroll scroll-width-none justify-start p-6 font-normal text-sm">
 					<div className="flex">
