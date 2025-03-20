@@ -7,6 +7,7 @@ import Link from "next/link";
 import IconVelog from "@/components/icon/IconVelog";
 import IconGithub from "@/components/icon/IconGithub";
 import { twMerge } from "tailwind-merge";
+import GoToTop from "./_view/go-to-top";
 
 const nanumSquareNeo = localFont({
   src: [
@@ -39,44 +40,12 @@ export default function RootLayout({
       lang="ko"
       className={twMerge(nanumSquareNeo.variable, notoSans.variable)}
     >
-      <body>
-        <nav className="w-full justify-start p-6 text-sm font-normal">
-          <div className="flex">
-            <img
-              alt="React"
-              className="pr-6"
-              src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"
-            />
-            <img
-              alt="Next.js"
-              className="pr-6"
-              src="https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs&logoColor=white"
-            />
-            <img
-              alt="Typescript"
-              className="pr-6"
-              src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
-            />
-            <img
-              alt="Tailwind CSS"
-              className="pr-6"
-              src="https://img.shields.io/badge/tailwind%20css-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"
-            />
-            <img
-              alt="React Query"
-              className="pr-6"
-              src="https://img.shields.io/badge/react%20query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white"
-            />
-            <img
-              alt="Jest"
-              className="pr-6"
-              src="https://img.shields.io/badge/jest-C21325?style=for-the-badge&logo=jest&logoColor=white"
-            />
-          </div>
-        </nav>
+      <body className="font-nanum">
+        <nav className="w-full justify-start p-6 text-sm font-normal"></nav>
 
         {children}
-        <footer className="flex justify-end px-6 py-12 text-sm font-bold text-white lg:px-40">
+        <GoToTop />
+        <footer className="flex justify-end px-6 py-12 text-sm font-bold lg:px-40">
           <h1 className="grow">조한빈 포트폴리오</h1>
           <div className="flex gap-2">
             <div className="relative h-6 w-6 hover:opacity-70">
