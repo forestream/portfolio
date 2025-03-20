@@ -1,20 +1,24 @@
-import Link from "next/link";
-import { redirect } from "next/navigation";
+"use client";
 
-export default function Page() {
-	redirect(
-		"https://just-perigee-eb1.notion.site/Portfolio-16e1388876c380c8b453eaf46b0b47f8"
-	);
+import { INTRODUCTION } from "@/lib/constants";
+import { useEffect, useRef, useState } from "react";
+
+export default function App() {
+	const [introduction, setIntroduction] = useState("");
+	const typingsIndex = useRef<number>(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setIntroduction(INTRODUCTION[typingsIndex.current++]);
+			if (typingsIndex.current >= INTRODUCTION.length) clearInterval(interval);
+		}, 30);
+
+		return () => clearInterval(interval);
+	}, []);
 
 	return (
-		<main className="ml-10">
-			<p>제 포트폴리오를 노션으로 옮겼습니다.</p>
-			<Link
-				href="https://just-perigee-eb1.notion.site/Portfolio-16e1388876c380c8b453eaf46b0b47f8"
-				className="font-bold underline hover:text-gray-500"
-			>
-				노션 포트폴리오로 이동
-			</Link>
+		<main>
+			<h1>{introduction}</h1>
 		</main>
 	);
 }

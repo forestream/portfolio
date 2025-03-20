@@ -7,15 +7,8 @@ import Link from "next/link";
 import IconVelog from "@/components/icon/IconVelog";
 import IconGithub from "@/components/icon/IconGithub";
 
-const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
-});
-const geistMono = localFont({
-	src: "./fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
+const nanumSquareNeo = localFont({
+	src: "./fonts/NanumSquareNeo-Variable.ttf",
 });
 
 const notoSans = Noto_Sans_KR({
@@ -34,12 +27,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			{/* <body
-				className={`${notoSans.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-t from-orange-950 from-10% via-red-900 via-30% to-blue-950 to-90%`}
-			> */}
-			<body
-				className={`${notoSans.className} ${geistSans.variable} ${geistMono.variable}`}
-			>
+			<body className={`${notoSans.className} ${nanumSquareNeo.className} `}>
 				<nav className="w-full overflow-scroll scroll-width-none justify-start p-6 font-normal text-sm">
 					<div className="flex">
 						<img
