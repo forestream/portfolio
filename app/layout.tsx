@@ -9,9 +9,11 @@ import IconGithub from "@/components/icon/IconGithub";
 
 const nanumSquareNeo = localFont({
 	src: "./fonts/NanumSquareNeo-Variable.ttf",
+	variable: "--font-nanum",
 });
 
 const notoSans = Noto_Sans_KR({
+	variable: "--font-noto-sans",
 	subsets: ["latin"],
 });
 
@@ -27,7 +29,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<body className={`${notoSans.className} ${nanumSquareNeo.className} `}>
+			<body className={`${notoSans.variable} ${nanumSquareNeo.variable} `}>
 				<nav className="w-full overflow-scroll scroll-width-none justify-start p-6 font-normal text-sm">
 					<div className="flex">
 						<img

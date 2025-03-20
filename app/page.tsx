@@ -18,7 +18,7 @@ export default function App() {
 
 	return (
 		<main>
-			<h1>{introduction}</h1>
+			<h1 className=" text-2xl font-extrabold">{introduction}</h1>
 		</main>
 	);
 }
