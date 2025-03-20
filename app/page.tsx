@@ -1,24 +1,25 @@
 "use client";
 
-import { INTRODUCTION } from "@/lib/constants";
-import { useEffect, useRef, useState } from "react";
+import useTypingEffect from "@/hooks/useTypingEffect";
+import { TYPING_HELLO, TYPING_INTRODUCTION } from "@/lib/constants";
+import { twMerge } from "tailwind-merge";
 
 export default function App() {
-	const [introduction, setIntroduction] = useState("");
-	const typingsIndex = useRef<number>(0);
+  const { frame: introduction } = useTypingEffect(
+    TYPING_INTRODUCTION,
+    40,
+    1000,
+  );
+  const { frame: hello } = useTypingEffect(TYPING_HELLO, 40, 0);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setIntroduction(INTRODUCTION[typingsIndex.current++]);
-			if (typingsIndex.current >= INTRODUCTION.length) clearInterval(interval);
-		}, 30);
-
-		return () => clearInterval(interval);
-	}, []);
-
-	return (
-		<main>
-			<h1 className=" text-2xl font-extrabold">{introduction}</h1>
-		</main>
-	);
+  return (
+    <main>
+      <section>
+        <h1 className={twMerge("font-nanum text-4xl font-normal")}>{hello}</h1>
+        <h1 className={twMerge("font-nanum text-4xl font-normal")}>
+          {introduction}
+        </h1>
+      </section>
+    </main>
+  );
 }

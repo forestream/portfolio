@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@config "../tailwind.config.ts";
+
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
@@ -19,7 +21,7 @@ body {
 		sans-serif;
 }
 
-@layer utilities {
+/* @layer utilities {
 	.text-balance {
 		text-wrap: balance;
 	}
@@ -33,4 +35,4 @@ body {
 	:root {
 		--radius: 0.5rem;
 	}
-}
+} */
