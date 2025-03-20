@@ -8,6 +8,8 @@ import IconVelog from "@/components/icon/IconVelog";
 import IconGithub from "@/components/icon/IconGithub";
 import { twMerge } from "tailwind-merge";
 import GoToTop from "./_view/go-to-top";
+import Header from "./_view/Header";
+import SplitFlapProvider from "@/components/SplitFlapProvider";
 
 const nanumSquareNeo = localFont({
   src: [
@@ -41,9 +43,10 @@ export default function RootLayout({
       className={twMerge(nanumSquareNeo.variable, notoSans.variable)}
     >
       <body className="font-nanum">
-        <nav className="w-full justify-start p-6 text-sm font-normal"></nav>
-
-        {children}
+        <SplitFlapProvider>
+          <Header />
+          {children}
+        </SplitFlapProvider>
         <GoToTop />
         <footer className="flex justify-end px-6 py-12 text-sm font-bold lg:px-40">
           <h1 className="grow">조한빈 포트폴리오</h1>

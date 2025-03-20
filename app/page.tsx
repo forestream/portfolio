@@ -5,6 +5,7 @@ import IconReact from "@/components/icon/IconReact";
 import IconTailwind from "@/components/icon/IconTailwind";
 import IconTanstackQuery from "@/components/icon/IconTanstackQuery";
 import IconTypescript from "@/components/icon/IconTypescript";
+import { useSplitFlapContext } from "@/hooks/useSplitFlapContext";
 import useSwipe from "@/hooks/useSwipe";
 import useTypingEffect from "@/hooks/useTypingEffect";
 import { TYPING_HELLO, TYPING_INTRODUCTION } from "@/lib/constants";
@@ -15,12 +16,8 @@ export default function App() {
   /**
    * 타이핑 효과
    */
-  const { frame: introduction } = useTypingEffect(
-    TYPING_INTRODUCTION,
-    40,
-    1000,
-  );
   const { frame: hello } = useTypingEffect(TYPING_HELLO, 20, 0);
+  const { frame: introduction } = useTypingEffect(TYPING_INTRODUCTION, 40, 900);
   const { ref, initialize, swipe, addTransition } = useSwipe();
 
   /**
@@ -45,14 +42,22 @@ export default function App() {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const { setText, text } = useSplitFlapContext();
+  const handleFlap = () =>
+    setText((prev) => (prev === "프로젝트" ? "술 스택" : "프로젝트"));
+
   return (
     <main>
+      <button onClick={handleFlap}>flap</button>
+      <p>current: {text}</p>
       <section className="flex h-[100vh] flex-col items-center justify-center gap-4">
-        <h1 className={twMerge("text-4xl font-normal")}>{hello}</h1>
-        <h1 className={twMerge("text-6xl font-semibold")}>{introduction}</h1>
+        <h1 className={twMerge("mb-8 text-4xl font-normal")}>{hello}</h1>
+        <h1 className={twMerge("mb-8 text-6xl font-semibold")}>
+          {introduction}
+        </h1>
         <div
           ref={ref as RefObject<HTMLDivElement>}
-          className="mt-8 flex gap-12 text-4xl font-bold opacity-0"
+          className="mt-8 mb-60 flex gap-12 text-4xl font-bold opacity-0"
         >
           <button
             className="cursor-pointer"
