@@ -5,11 +5,23 @@ import IconReact from "@/components/icon/IconReact";
 import IconTailwind from "@/components/icon/IconTailwind";
 import IconTanstackQuery from "@/components/icon/IconTanstackQuery";
 import IconTypescript from "@/components/icon/IconTypescript";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { useSplitFlapContext } from "@/hooks/useSplitFlapContext";
 import useSwipe from "@/hooks/useSwipe";
 import useTypingEffect from "@/hooks/useTypingEffect";
-import { TYPING_HELLO, TYPING_INTRODUCTION } from "@/lib/constants";
-import { RefObject, useEffect, useLayoutEffect, useRef } from "react";
+import {
+  SPLIT_FLAP_WORDS,
+  TYPING_HELLO,
+  TYPING_INTRODUCTION,
+} from "@/lib/constants";
+import {
+  RefObject,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+} from "react";
 import { twMerge } from "tailwind-merge";
 
 export default function App() {
@@ -42,15 +54,50 @@ export default function App() {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const { setText, text } = useSplitFlapContext();
-  const handleFlap = () =>
-    setText((prev) => (prev === "프로젝트" ? "술 스택" : "프로젝트"));
+  const { setText } = useSplitFlapContext();
+
+  const ioCallback = useCallback<IntersectionObserverCallback>((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setText(SPLIT_FLAP_WORDS[entry.target.id]);
+      }
+    });
+  }, []);
+  const ioInit = useMemo<IntersectionObserverInit>(
+    () => ({
+      threshold: 0.5,
+    }),
+    [],
+  );
+
+  const { addRef } = useIntersectionObserver(ioCallback, ioInit);
+
+  const stackRefCallback = useCallback((node: HTMLElement) => {
+    const ioCleanup = addRef(node);
+    stackRef.current = node;
+
+    return () => {
+      ioCleanup();
+      stackRef.current = null;
+    };
+  }, []);
+  const projectsRefCallback = useCallback((node: HTMLElement) => {
+    const ioCleanup = addRef(node);
+    projectsRef.current = node;
+
+    return () => {
+      ioCleanup();
+      projectsRef.current = null;
+    };
+  }, []);
 
   return (
-    <main>
-      <button onClick={handleFlap}>flap</button>
-      <p>current: {text}</p>
-      <section className="flex h-[100vh] flex-col items-center justify-center gap-4">
+    <main className="p-24">
+      <section
+        id="introduction"
+        ref={addRef}
+        className="flex h-[100vh] flex-col items-center justify-center gap-4"
+      >
         <h1 className={twMerge("mb-8 text-4xl font-normal")}>{hello}</h1>
         <h1 className={twMerge("mb-8 text-6xl font-semibold")}>
           {introduction}
@@ -74,7 +121,7 @@ export default function App() {
         </div>
       </section>
       <section
-        ref={stackRef}
+        ref={stackRefCallback}
         className="flex h-[100vh] items-center justify-center"
         id="stack"
       >
@@ -101,7 +148,11 @@ export default function App() {
           </div>
         </div>
       </section>
-      <section ref={projectsRef} className="h-[100vh]" id="projects"></section>
+      <section
+        ref={projectsRefCallback}
+        className="h-[100vh]"
+        id="projects"
+      ></section>
     </main>
   );
 }

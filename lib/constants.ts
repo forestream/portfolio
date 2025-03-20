@@ -1,3 +1,9 @@
+export const SPLIT_FLAP_WORDS: Record<string, string> = {
+  introduction: "홈",
+  stack: "기술 스택",
+  projects: "프로젝트",
+};
+
 export const TYPING_HELLO = [
   "ㅇ",
   "아",
