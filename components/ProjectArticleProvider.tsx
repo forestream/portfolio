@@ -74,7 +74,7 @@ export function ProjectArticleProvider({ children }: PropsWithChildren) {
     swiper.addTransition();
   }, [swiper]);
 
-  const value = useMemo(() => ({ swiper, io }), []);
+  const value = useMemo(() => ({ swiper, io }), [io, swiper]);
 
   return (
     <ProjectArticleContext.Provider value={value}>
