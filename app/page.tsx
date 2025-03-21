@@ -21,8 +21,13 @@ import {
   useLayoutEffect,
   useMemo,
   useRef,
+  useState,
 } from "react";
 import { twMerge } from "tailwind-merge";
+import ProjectsSection from "./_view/ProjectsSection";
+import zustand from "./images/zustand.png";
+import Image from "next/image";
+import IconFirebase from "@/components/icon/IconFirebase";
 
 export default function App() {
   /**
@@ -30,21 +35,40 @@ export default function App() {
    */
   const { frame: hello } = useTypingEffect(TYPING_HELLO, 20, 0);
   const { frame: introduction } = useTypingEffect(TYPING_INTRODUCTION, 40, 900);
-  const { ref, initialize, swipe, addTransition } = useSwipe();
+  const navSwiper = useSwipe();
+  const stackSwiper = useSwipe();
 
   /**
    * 스와이핑 효과
    */
   useLayoutEffect(() => {
-    swipe("out", "bottom");
-  }, [initialize, swipe]);
+    navSwiper.swipe("out", "bottom");
+    stackSwiper.initialize();
+    stackSwiper.swipe("out", "top");
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
-      addTransition();
-      swipe("in", "bottom");
-    }, 3000);
-  }, [addTransition, swipe]);
+      navSwiper.addTransition();
+      stackSwiper.addTransition();
+      navSwiper.swipe("in", "bottom");
+      stackSwiper.swipe("in", "top");
+    }, 2500);
+  }, []);
+
+  const [stackVisible, setStackVisible] = useState(false);
+
+  const handleSwipeStack = (type: "in" | "out") => {
+    if (type === "in") {
+      setStackVisible(true);
+      stackSwiper.addTransition();
+      stackSwiper.swipe("in", "top");
+    } else {
+      setStackVisible(false);
+      stackSwiper.addTransition();
+      stackSwiper.swipe("out", "top");
+    }
+  };
 
   const stackRef = useRef<HTMLElement | null>(null);
   const projectsRef = useRef<HTMLElement | null>(null);
@@ -75,10 +99,12 @@ export default function App() {
   const stackRefCallback = useCallback((node: HTMLElement) => {
     const ioCleanup = addRef(node);
     stackRef.current = node;
+    stackSwiper.ref.current = node;
 
     return () => {
       ioCleanup();
       stackRef.current = null;
+      stackSwiper.ref.current = null;
     };
   }, []);
   const projectsRefCallback = useCallback((node: HTMLElement) => {
@@ -92,7 +118,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="p-24">
+    <main className="px-[260px] pt-24">
       <section
         id="introduction"
         ref={addRef}
@@ -103,56 +129,62 @@ export default function App() {
           {introduction}
         </h1>
         <div
-          ref={ref as RefObject<HTMLDivElement>}
-          className="mt-8 mb-60 flex gap-12 text-4xl font-bold opacity-0"
+          ref={navSwiper.ref as RefObject<HTMLDivElement>}
+          className="relative z-10 mt-8 flex gap-12 text-4xl font-bold opacity-0"
         >
           <button
             className="cursor-pointer"
-            onClick={() => handleScroll(stackRef)}
+            onClick={() => handleSwipeStack(stackVisible ? "out" : "in")}
           >
-            <h2>기술 스택</h2>
+            기술 스택
           </button>
           <button
             className="cursor-pointer"
             onClick={() => handleScroll(projectsRef)}
           >
-            <h2>프로젝트</h2>
+            프로젝트
           </button>
         </div>
+        <article
+          ref={stackRefCallback}
+          className="mt-16 flex -translate-y-full items-center justify-center opacity-0"
+          id="stack"
+        >
+          <div className="font-noto-sans flex flex-wrap items-center gap-4">
+            <div className="flex w-[300px] items-center gap-8">
+              <IconReact className="aspect-square h-20" />
+              <span className="text-3xl font-light">React</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconNextJs className="aspect-square h-20" />
+              <span className="text-3xl font-light">Next.js</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconTypescript className="aspect-square h-20" />
+              <span className="text-3xl font-light">Typescript</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconTailwind text={false} className="aspect-square h-20" />
+              <span className="text-3xl font-light">Tailwind CSS</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconTanstackQuery className="aspect-square h-20" />
+              <span className="text-3xl font-light">Tanstack Query</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <div className="relative aspect-square h-20">
+                <Image src={zustand} alt="zustand image" fill />
+              </div>
+              <span className="text-3xl font-light">Zustand</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconFirebase className="aspect-square h-20 w-min" />
+              <span className="text-3xl font-light">Firebase</span>
+            </div>
+          </div>
+        </article>
       </section>
-      <section
-        ref={stackRefCallback}
-        className="flex h-[100vh] items-center justify-center"
-        id="stack"
-      >
-        <div className="font-noto-sans flex flex-col items-center gap-4">
-          <div className="flex w-[400px] items-center gap-8">
-            <IconReact className="aspect-square h-20" />
-            <span className="text-3xl font-light">React</span>
-          </div>
-          <div className="flex w-[400px] items-center gap-8">
-            <IconNextJs className="aspect-square h-20" />
-            <span className="text-3xl font-light">Next.js</span>
-          </div>
-          <div className="flex w-[400px] items-center gap-8">
-            <IconTypescript className="aspect-square h-20" />
-            <span className="text-3xl font-light">Typescript</span>
-          </div>
-          <div className="flex w-[400px] items-center gap-8">
-            <IconTailwind text={false} className="aspect-square h-20" />
-            <span className="text-3xl font-light">Typescript</span>
-          </div>
-          <div className="flex w-[400px] items-center gap-8">
-            <IconTanstackQuery className="aspect-square h-20" />
-            <span className="text-3xl font-light">Tanstack Query</span>
-          </div>
-        </div>
-      </section>
-      <section
-        ref={projectsRefCallback}
-        className="h-[100vh]"
-        id="projects"
-      ></section>
+      <ProjectsSection ref={projectsRefCallback} />
     </main>
   );
 }

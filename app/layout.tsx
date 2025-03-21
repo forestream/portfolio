@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Noto_Sans_KR } from "next/font/google";
@@ -7,7 +6,7 @@ import Link from "next/link";
 import IconVelog from "@/components/icon/IconVelog";
 import IconGithub from "@/components/icon/IconGithub";
 import { twMerge } from "tailwind-merge";
-import GoToTop from "./_view/go-to-top";
+import GoToTop from "./_view/GoToTop";
 import Header from "./_view/Header";
 import SplitFlapProvider from "@/components/SplitFlapProvider";
 
@@ -29,7 +28,7 @@ const notoSans = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: "조한빈 포트폴리오",
-  description: "조한빈의 포트폴리오입니다.",
+  description: "프론트엔드 개발하는 조한빈의 포트폴리오입니다.",
 };
 
 export default function RootLayout({
@@ -48,16 +47,16 @@ export default function RootLayout({
           {children}
         </SplitFlapProvider>
         <GoToTop />
-        <footer className="flex justify-end px-6 py-12 text-sm font-bold lg:px-40">
+        <footer className="flex justify-end px-6 py-12 text-sm font-bold lg:px-[300px]">
           <h1 className="grow">조한빈 포트폴리오</h1>
           <div className="flex gap-2">
-            <div className="relative h-6 w-6 hover:opacity-70">
+            <div className="relative h-6 w-6 transition-opacity hover:opacity-70">
               <Link href="https://github.com/forestream" target="_blank">
-                <IconGithub className="fill-white" />
+                <IconGithub />
               </Link>
             </div>
-            <div className="relative h-6 w-6 hover:opacity-70">
-              <Link href="https://github.com/forestream" target="_blank">
+            <div className="relative h-6 w-6 transition-opacity hover:opacity-70">
+              <Link href="https://velog.io/@forestream" target="_blank">
                 <IconVelog />
               </Link>
             </div>

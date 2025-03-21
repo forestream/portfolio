@@ -4,12 +4,14 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 
 export default function useIntersectionObserver(
   callback: IntersectionObserverCallback,
-  options: IntersectionObserverInit,
+  options?: IntersectionObserverInit,
 ) {
-  const ref = useRef<Set<Node>>(new Set());
+  const ref = useRef<Set<Node | null>>(new Set());
 
-  const addRef = useCallback((node: HTMLElement) => {
-    ref.current.add(node);
+  const addRef = useCallback((node: HTMLElement | null) => {
+    if (node) {
+      ref.current.add(node);
+    }
 
     return () => {
       ref.current.delete(node);

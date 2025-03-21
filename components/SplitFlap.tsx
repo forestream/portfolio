@@ -51,11 +51,11 @@ export function SplitFlapCard({ char, mode = "open" }: SplitFlapCardProps) {
   );
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-10">
       <div
         ref={upper}
         className={twMerge(
-          "absolute top-0 right-0 left-0 inline-block h-1/2 min-w-12 origin-bottom overflow-hidden rounded-t bg-black transition-transform duration-500 ease-[cubic-bezier(0,1.5,0.9,0.9)] backface-hidden",
+          "absolute top-0 right-0 left-0 inline-block h-1/2 min-w-full origin-bottom overflow-hidden rounded-t bg-black transition-transform duration-500 ease-[cubic-bezier(0,1.5,0.9,0.9)] backface-hidden",
         )}
       >
         <p className="flex h-[200%] items-center justify-center">
@@ -67,7 +67,7 @@ export function SplitFlapCard({ char, mode = "open" }: SplitFlapCardProps) {
       <div
         ref={lower}
         className={twMerge(
-          "absolute right-0 bottom-0 left-0 inline-block h-1/2 min-w-12 origin-top -rotate-x-180 overflow-hidden rounded-b bg-black transition-transform duration-500 ease-[cubic-bezier(0,1.5,0.9,0.9)] backface-hidden",
+          "absolute right-0 bottom-0 left-0 inline-block h-1/2 min-w-full origin-top -rotate-x-180 overflow-hidden rounded-b bg-black transition-transform duration-500 ease-[cubic-bezier(0,1.5,0.9,0.9)] backface-hidden",
           clsx(mode === "open" && "z-10"),
         )}
       >
