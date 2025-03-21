@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { MutableRefObject, Ref, RefCallback } from "react";
+import { MutableRefObject, RefCallback } from "react";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {

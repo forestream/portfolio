@@ -24,7 +24,9 @@ export default function useIntersectionObserver(
     ref.current.forEach((node) => {
       io.observe(node as Element);
     });
-  }, []);
+  }, [callback, options]);
 
-  return { addRef };
+  const io = useMemo(() => ({ addRef }), [addRef]);
+
+  return io;
 }
