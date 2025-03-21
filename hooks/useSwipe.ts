@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
 
 export type Directive = "in" | "out";
 export type Side = "top" | "bottom" | "right" | "left";
@@ -50,5 +50,16 @@ export default function useSwipe() {
     });
   }, []);
 
-  return { ref, addTransition, removeTransition, swipe, initialize };
+  const swiper = useMemo(
+    () => ({
+      ref,
+      addTransition,
+      removeTransition,
+      swipe,
+      initialize,
+    }),
+    [addTransition, initialize, removeTransition, swipe],
+  );
+
+  return swiper;
 }

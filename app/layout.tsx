@@ -9,6 +9,7 @@ import { twMerge } from "tailwind-merge";
 import GoToTop from "./_view/GoToTop";
 import Header from "./_view/Header";
 import SplitFlapProvider from "@/components/SplitFlapProvider";
+import Background from "./_view/Background";
 
 const nanumSquareNeo = localFont({
   src: [
@@ -42,6 +43,7 @@ export default function RootLayout({
       className={twMerge(nanumSquareNeo.variable, notoSans.variable)}
     >
       <body className="font-nanum">
+        <Background />
         <SplitFlapProvider>
           <Header />
           {children}

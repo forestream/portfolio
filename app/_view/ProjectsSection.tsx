@@ -37,13 +37,15 @@ export default function ProjectsSection({
         </Link>
         <ProjectArticleContent>
           <Link href="https://slid-todo-xi.vercel.app/" target="_blank">
-            <Image
-              className="shadow-lg transition-transform hover:-translate-y-1"
-              src={images.slidTodo}
-              alt="Slid To-do 메인"
-              width={600}
-              height={450}
-            />
+            <div className="relative h-[350px] w-[600px] rounded bg-white shadow-lg">
+              <Image
+                className="shadow-lg transition-transform hover:-translate-y-1"
+                src={images.slidTodo}
+                alt="Slid To-do 메인"
+                fill
+                style={{ objectFit: "contain" }}
+              />
+            </div>
           </Link>
           <ProjectArticleDescription>
             <p>
@@ -80,8 +82,11 @@ export default function ProjectsSection({
           동그리나
         </h1>
         <ProjectArticleContent>
-          <CarouselClient speed={1} className="shadow-lg">
-            <CarouselContent style={{ width: "600px", height: "350px" }}>
+          <CarouselClient
+            speed={1}
+            className="h-[350px] w-[600px] rounded bg-white shadow-lg"
+          >
+            <CarouselContent>
               <CarouselItem>
                 <div className="relative h-[350px] w-[600px]">
                   <Image
@@ -149,7 +154,7 @@ export default function ProjectsSection({
         </Link>
         <ProjectArticleContent>
           <Link href="https://synergy10.vercel.app/" target="_blank">
-            <div className="relative h-[350px] w-[600px] shadow-lg">
+            <div className="relative h-[350px] w-[600px] rounded bg-white shadow-lg">
               <Image
                 src={images.synergy}
                 alt="시너지 메인 이미지"
@@ -180,7 +185,7 @@ export default function ProjectsSection({
           리액트 구현
         </h1>
         <ProjectArticleContent>
-          <div className="relative h-[350px] w-[600px] shadow-lg">
+          <div className="relative h-[350px] w-[600px] rounded bg-white shadow-lg">
             <Image
               src={images.jsReact}
               alt="시너지 메인 이미지"

@@ -48,7 +48,7 @@ export default function App() {
     navSwiper.swipe("out", "bottom");
     stackSwiper.initialize();
     stackSwiper.swipe("out", "top");
-  }, []);
+  }, [navSwiper, stackSwiper]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -57,9 +57,9 @@ export default function App() {
       navSwiper.swipe("in", "bottom");
       stackSwiper.swipe("in", "top");
     }, 2500);
-  }, []);
+  }, [navSwiper, stackSwiper]);
 
-  const [stackVisible, setStackVisible] = useState(false);
+  const [stackVisible, setStackVisible] = useState(true);
 
   const handleSwipeStack = (type: "in" | "out") => {
     if (type === "in") {
@@ -83,13 +83,16 @@ export default function App() {
 
   const { setText } = useSplitFlapContext();
 
-  const ioCallback = useCallback<IntersectionObserverCallback>((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setText(SPLIT_FLAP_WORDS[entry.target.id]);
-      }
-    });
-  }, []);
+  const ioCallback = useCallback<IntersectionObserverCallback>(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setText(SPLIT_FLAP_WORDS[entry.target.id]);
+        }
+      });
+    },
+    [setText],
+  );
   const ioInit = useMemo<IntersectionObserverInit>(
     () => ({
       threshold: 0.5,
@@ -99,26 +102,32 @@ export default function App() {
 
   const { addRef } = useIntersectionObserver(ioCallback, ioInit);
 
-  const stackRefCallback = useCallback((node: HTMLElement) => {
-    const ioCleanup = addRef(node);
-    stackRef.current = node;
-    stackSwiper.ref.current = node;
+  const stackRefCallback = useCallback(
+    (node: HTMLElement) => {
+      const ioCleanup = addRef(node);
+      stackRef.current = node;
+      stackSwiper.ref.current = node;
 
-    return () => {
-      ioCleanup();
-      stackRef.current = null;
-      stackSwiper.ref.current = null;
-    };
-  }, []);
-  const projectsRefCallback = useCallback((node: HTMLElement) => {
-    const ioCleanup = addRef(node);
-    projectsRef.current = node;
+      return () => {
+        ioCleanup();
+        stackRef.current = null;
+        stackSwiper.ref.current = null;
+      };
+    },
+    [addRef, stackSwiper.ref],
+  );
+  const projectsRefCallback = useCallback(
+    (node: HTMLElement) => {
+      const ioCleanup = addRef(node);
+      projectsRef.current = node;
 
-    return () => {
-      ioCleanup();
-      projectsRef.current = null;
-    };
-  }, []);
+      return () => {
+        ioCleanup();
+        projectsRef.current = null;
+      };
+    },
+    [addRef],
+  );
 
   return (
     <main className="px-[260px] pt-24">
