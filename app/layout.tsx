@@ -51,10 +51,19 @@ export default function RootLayout({
         </SplitFlapProvider>
         <GoToTop />
         <footer className="flex justify-end px-6 py-12 text-sm font-bold lg:px-[300px]">
-          <h1 className="grow">조한빈 포트폴리오</h1>
-          <div className="flex gap-2">
+          <p className="grow">
+            <span className="block">조한빈 포트폴리오</span>
+            <span className="text-xs font-normal">업데이트: 2025.03.21</span>
+          </p>
+          <div className="flex items-center gap-2">
+            <p className="font-normal">
+              프로젝트별 자세한 설명은 노션에서 확인하실 수 있습니다.
+            </p>
             <div className="relative h-6 w-6 transition-opacity hover:opacity-70">
-              <Link href="https://github.com/forestream" target="_blank">
+              <Link
+                href="https://just-perigee-eb1.notion.site/Portfolio-16e1388876c380c8b453eaf46b0b47f8"
+                target="_blank"
+              >
                 <IconNotion />
               </Link>
             </div>
