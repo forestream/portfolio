@@ -59,7 +59,7 @@ export function ProjectArticleProvider({ children }: PropsWithChildren) {
 
   const ioInit = useMemo<IntersectionObserverInit>(
     () => ({
-      threshold: 0.75,
+      threshold: 0.5,
     }),
     [],
   );
