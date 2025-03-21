@@ -82,10 +82,7 @@ export default function ProjectsSection({
           동그리나
         </h1>
         <ProjectArticleContent>
-          <CarouselClient
-            speed={1}
-            className="h-[350px] w-[600px] rounded bg-white shadow-lg"
-          >
+          <CarouselClient className="h-[350px] w-[600px] rounded bg-white shadow-lg">
             <CarouselContent>
               <CarouselItem>
                 <div className="relative h-[350px] w-[600px]">

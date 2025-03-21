@@ -73,7 +73,6 @@ export default function App() {
     }
   };
 
-  const stackRef = useRef<HTMLElement | null>(null);
   const projectsRef = useRef<HTMLElement | null>(null);
 
   const handleScroll = (ref: RefObject<HTMLElement>) => {
@@ -95,7 +94,8 @@ export default function App() {
   );
   const ioInit = useMemo<IntersectionObserverInit>(
     () => ({
-      threshold: 0.5,
+      threshold: 0,
+      rootMargin: "-10% 0% -70% 0%",
     }),
     [],
   );
@@ -103,14 +103,12 @@ export default function App() {
   const { addRef } = useIntersectionObserver(ioCallback, ioInit);
 
   const stackRefCallback = useCallback(
-    (node: HTMLElement) => {
+    (node: HTMLElement | null) => {
       const ioCleanup = addRef(node);
-      stackRef.current = node;
       stackSwiper.ref.current = node;
 
       return () => {
         ioCleanup();
-        stackRef.current = null;
         stackSwiper.ref.current = null;
       };
     },
@@ -131,13 +129,13 @@ export default function App() {
 
   return (
     <main className="px-[260px] pt-24">
-      <section
-        id="introduction"
-        ref={addRef}
-        className="flex h-[100vh] flex-col items-center justify-center gap-4"
-      >
+      <section className="flex h-[100vh] flex-col items-center justify-center gap-4 text-orange-900">
         <h1 className={twMerge("mb-8 text-4xl font-normal")}>{hello}</h1>
-        <h1 className={twMerge("mb-8 text-6xl font-semibold")}>
+        <h1
+          id="introduction"
+          ref={addRef}
+          className={twMerge("mb-8 text-6xl font-semibold")}
+        >
           {introduction}
         </h1>
         <div
@@ -157,12 +155,12 @@ export default function App() {
             프로젝트
           </button>
         </div>
-        <article
-          ref={stackRefCallback}
-          className="mt-16 flex -translate-y-full items-center justify-center opacity-0"
-          id="stack"
-        >
-          <div className="font-noto-sans flex flex-wrap items-center gap-6 select-none">
+        <article className="mt-16 flex items-center justify-center overflow-hidden">
+          <div
+            id="stack"
+            ref={stackRefCallback}
+            className="font-noto-sans flex -translate-y-full flex-wrap items-center gap-6 opacity-0 select-none"
+          >
             <div className="flex w-[300px] items-center gap-8">
               <IconHtml className="aspect-square h-18" />
               <span className="text-3xl font-light">HTML</span>

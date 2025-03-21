@@ -12,7 +12,7 @@ export default function Background() {
 
   const dots = useMemo(
     () =>
-      Array.from({ length: 70 }).map(() => ({
+      Array.from({ length: 60 }).map(() => ({
         x: Math.random() * 1920,
         y: Math.random() * 1080,
         r: Math.random() * 96,
@@ -36,7 +36,15 @@ export default function Background() {
     return () => ro.disconnect();
   }, []);
 
+  const mouse = useRef<Record<"x" | "y", number>>({ x: 0, y: 0 });
+
   useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+
     if (!canvas.current) return;
     const context = canvas.current.getContext("2d");
 
@@ -45,8 +53,8 @@ export default function Background() {
       context.reset();
       dots.forEach((dot) => {
         const { x, y, r, inc } = dot;
-        dot.x = x > 1920 + r ? 0 : x + 0.02;
-        dot.y = y < 0 - r ? 1080 : y - 0.02;
+        dot.x = x > 1920 + r ? 0 : x + 0.05;
+        dot.y = y < 0 - r ? 1080 : y - 0.05;
         dot.r = inc ? r + 0.01 : r - 0.01;
         if (r > 98) dot.inc = false;
         if (r < 94) dot.inc = true;
@@ -64,6 +72,7 @@ export default function Background() {
     return () => {
       if (!raf.current) return;
       window.cancelAnimationFrame(raf.current);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [dots]);
 

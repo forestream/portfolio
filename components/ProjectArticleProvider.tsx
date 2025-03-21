@@ -30,7 +30,10 @@ export function ProjectArticleContent({ children }: PropsWithChildren) {
   const { io } = useProjectArticleContext();
 
   return (
-    <div className="flex gap-8" ref={(node) => manageRef(node, io.addRef)}>
+    <div
+      className="flex gap-8 overflow-hidden"
+      ref={(node) => manageRef(node, io.addRef)}
+    >
       {children}
     </div>
   );
@@ -39,17 +42,20 @@ export function ProjectArticleContent({ children }: PropsWithChildren) {
 export function ProjectArticleProvider({ children }: PropsWithChildren) {
   const swiper = useSwipe();
 
-  const ioCallback = useCallback<IntersectionObserverCallback>((entries) => {
-    entries.forEach((entry) => {
-      if (entry.target.contains(swiper.ref.current)) {
-        if (entry.isIntersecting) {
-          swiper.swipe("in", "bottom");
-        } else {
-          swiper.swipe("out", "bottom");
+  const ioCallback = useCallback<IntersectionObserverCallback>(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target.contains(swiper.ref.current)) {
+          if (entry.isIntersecting) {
+            swiper.swipe("in", "bottom");
+          } else {
+            swiper.swipe("out", "bottom");
+          }
         }
-      }
-    });
-  }, []);
+      });
+    },
+    [swiper],
+  );
 
   const ioInit = useMemo<IntersectionObserverInit>(
     () => ({
@@ -63,10 +69,10 @@ export function ProjectArticleProvider({ children }: PropsWithChildren) {
   useLayoutEffect(() => {
     swiper.initialize();
     swiper.swipe("out", "bottom");
-  }, []);
+  }, [swiper]);
   useEffect(() => {
     swiper.addTransition();
-  }, []);
+  }, [swiper]);
 
   const value = useMemo(() => ({ swiper, io }), []);
 
