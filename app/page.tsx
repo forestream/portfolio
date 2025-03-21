@@ -28,6 +28,9 @@ import ProjectsSection from "./_view/ProjectsSection";
 import zustand from "./images/zustand.png";
 import Image from "next/image";
 import IconFirebase from "@/components/icon/IconFirebase";
+import IconHtml from "@/components/icon/IconHtml";
+import IconCss from "@/components/icon/IconCss";
+import IconJavascript from "@/components/icon/IconJavascript";
 
 export default function App() {
   /**
@@ -150,35 +153,47 @@ export default function App() {
           className="mt-16 flex -translate-y-full items-center justify-center opacity-0"
           id="stack"
         >
-          <div className="font-noto-sans flex flex-wrap items-center gap-4">
+          <div className="font-noto-sans flex flex-wrap items-center gap-6 select-none">
             <div className="flex w-[300px] items-center gap-8">
-              <IconReact className="aspect-square h-20" />
+              <IconHtml className="aspect-square h-18" />
+              <span className="text-3xl font-light">HTML</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconCss className="aspect-square h-18" />
+              <span className="text-3xl font-light">CSS</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconJavascript className="aspect-square h-18" />
+              <span className="text-3xl font-light">Javascript</span>
+            </div>
+            <div className="flex w-[300px] items-center gap-8">
+              <IconReact className="aspect-square h-18" />
               <span className="text-3xl font-light">React</span>
             </div>
             <div className="flex w-[300px] items-center gap-8">
-              <IconNextJs className="aspect-square h-20" />
+              <IconNextJs className="aspect-square h-18" />
               <span className="text-3xl font-light">Next.js</span>
             </div>
             <div className="flex w-[300px] items-center gap-8">
-              <IconTypescript className="aspect-square h-20" />
+              <IconTypescript className="aspect-square h-18" />
               <span className="text-3xl font-light">Typescript</span>
             </div>
             <div className="flex w-[300px] items-center gap-8">
-              <IconTailwind text={false} className="aspect-square h-20" />
+              <IconTailwind text={false} className="aspect-square h-18" />
               <span className="text-3xl font-light">Tailwind CSS</span>
             </div>
             <div className="flex w-[300px] items-center gap-8">
-              <IconTanstackQuery className="aspect-square h-20" />
+              <IconTanstackQuery className="aspect-square h-18" />
               <span className="text-3xl font-light">Tanstack Query</span>
             </div>
             <div className="flex w-[300px] items-center gap-8">
-              <div className="relative aspect-square h-20">
+              <div className="relative aspect-square h-18">
                 <Image src={zustand} alt="zustand image" fill />
               </div>
               <span className="text-3xl font-light">Zustand</span>
             </div>
             <div className="flex w-[300px] items-center gap-8">
-              <IconFirebase className="aspect-square h-20 w-min" />
+              <IconFirebase className="aspect-square h-18 w-min" />
               <span className="text-3xl font-light">Firebase</span>
             </div>
           </div>

@@ -1,9 +1,7 @@
-import donggrinaCalendar from "../images/donggrina-calendar.jpg";
-import donggrinaMain from "../images/donggrina-main.jpg";
+import * as images from "../images/index";
 import Image from "next/image";
 import { ComponentPropsWithRef } from "react";
 import { twMerge } from "tailwind-merge";
-import slidTodo from "../images/slidTodo.png";
 import Link from "next/link";
 import IconNewWindow from "@/components/icon/IconNewWindow";
 import {
@@ -41,7 +39,7 @@ export default function ProjectsSection({
           <Link href="https://slid-todo-xi.vercel.app/" target="_blank">
             <Image
               className="shadow-lg transition-transform hover:-translate-y-1"
-              src={slidTodo}
+              src={images.slidTodo}
               alt="Slid To-do 메인"
               width={600}
               height={450}
@@ -82,22 +80,22 @@ export default function ProjectsSection({
           동그리나
         </h1>
         <ProjectArticleContent>
-          <CarouselClient speed={1}>
+          <CarouselClient speed={1} className="shadow-lg">
             <CarouselContent style={{ width: "600px", height: "350px" }}>
               <CarouselItem>
                 <div className="relative h-[350px] w-[600px]">
                   <Image
-                    src={donggrinaMain}
+                    src={images.donggrinaMain}
                     alt="동그리나 메인 이미지"
                     fill
-                    style={{ objectFit: "contain" }}
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
               </CarouselItem>
               <CarouselItem>
                 <div className="relative h-[350px] w-[600px]">
                   <Image
-                    src={donggrinaCalendar}
+                    src={images.donggrinaCalendar}
                     alt="동그리나 일정 이미지"
                     fill
                     style={{ objectFit: "contain" }}
@@ -129,6 +127,82 @@ export default function ProjectsSection({
               </Link>
               <Link
                 href="https://github.com/FESI-4-4/slid-todo"
+                target="_blank"
+                className="hover:underline"
+              >
+                Github 레포지토리
+              </Link>
+            </p>
+          </ProjectArticleDescription>
+        </ProjectArticleContent>
+      </ProjectArticleProvider>
+      <ProjectArticleProvider>
+        <Link
+          href="https://slid-todo-xi.vercel.app/"
+          className="inline-block"
+          target="_blank"
+        >
+          <h1 className="font-noto-sans mb-8 flex items-end gap-2 text-4xl font-bold text-orange-950 transition-colors hover:text-orange-900">
+            시너지
+            <IconNewWindow className="fill-orange-950" />
+          </h1>
+        </Link>
+        <ProjectArticleContent>
+          <Link href="https://synergy10.vercel.app/" target="_blank">
+            <div className="relative h-[350px] w-[600px] shadow-lg">
+              <Image
+                src={images.synergy}
+                alt="시너지 메인 이미지"
+                fill
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          </Link>
+          <ProjectArticleDescription>
+            <p>라이브러리: React, Typescript, SCSS, React Hook Form</p>
+            <p>프레임워크: Next.js</p>
+            <p className="text-base font-normal">2024.04 - 2024.05</p>
+            <p className="mt-6">하루 알바를 위한 구인/구직 플랫폼입니다.</p>
+            <p className="mt-6 text-base font-normal">
+              <Link
+                href="https://github.com/sprint-part3-team10/tenten"
+                target="_blank"
+                className="hover:underline"
+              >
+                Github 레포지토리
+              </Link>
+            </p>
+          </ProjectArticleDescription>
+        </ProjectArticleContent>
+      </ProjectArticleProvider>
+      <ProjectArticleProvider>
+        <h1 className="font-noto-sans mb-8 flex items-end gap-2 text-4xl font-bold text-orange-950">
+          리액트 구현
+        </h1>
+        <ProjectArticleContent>
+          <div className="relative h-[350px] w-[600px] shadow-lg">
+            <Image
+              src={images.jsReact}
+              alt="시너지 메인 이미지"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <ProjectArticleDescription>
+            <p>라이브러리: Typescript</p>
+            <p>프레임워크: Vite</p>
+            <p className="text-base font-normal">2025.01 - 2025.02</p>
+            <p className="mt-6">바닐라 자바스크립트로 리액트를 구현했습니다.</p>
+            <p className="mt-6 text-base font-normal">
+              <Link
+                href="https://velog.io/@forestream/React-%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%A1%9D"
+                target="_blank"
+                className="block hover:underline"
+              >
+                블로그 포스트
+              </Link>
+              <Link
+                href="https://github.com/forestream/whatever-react"
                 target="_blank"
                 className="hover:underline"
               >
