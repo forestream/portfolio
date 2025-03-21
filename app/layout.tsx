@@ -10,6 +10,7 @@ import GoToTop from "./_view/GoToTop";
 import Header from "./_view/Header";
 import SplitFlapProvider from "@/components/SplitFlapProvider";
 import Background from "./_view/Background";
+import IconNotion from "@/components/icon/IconNotion";
 
 const nanumSquareNeo = localFont({
   src: [
@@ -52,6 +53,11 @@ export default function RootLayout({
         <footer className="flex justify-end px-6 py-12 text-sm font-bold lg:px-[300px]">
           <h1 className="grow">조한빈 포트폴리오</h1>
           <div className="flex gap-2">
+            <div className="relative h-6 w-6 transition-opacity hover:opacity-70">
+              <Link href="https://github.com/forestream" target="_blank">
+                <IconNotion />
+              </Link>
+            </div>
             <div className="relative h-6 w-6 transition-opacity hover:opacity-70">
               <Link href="https://github.com/forestream" target="_blank">
                 <IconGithub />

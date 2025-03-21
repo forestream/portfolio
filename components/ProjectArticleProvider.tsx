@@ -78,7 +78,7 @@ export function ProjectArticleProvider({ children }: PropsWithChildren) {
 
   return (
     <ProjectArticleContext.Provider value={value}>
-      <article className="mb-8">{children}</article>
+      <article className="mb-16">{children}</article>
     </ProjectArticleContext.Provider>
   );
 }
