@@ -8,6 +8,7 @@ import {
   useCallback,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
 } from "react";
 import { twMerge } from "tailwind-merge";
@@ -95,7 +96,10 @@ export default function SplitFlap({
   const { text } = useSplitFlapContext();
   const prevSplitText = useRef<string[]>([]);
 
-  const splitText = text.split("").filter((char) => char !== " ");
+  const splitText = useMemo(
+    () => text.split("").filter((char) => char !== " "),
+    [text],
+  );
 
   useEffect(() => {
     prevSplitText.current = splitText;
