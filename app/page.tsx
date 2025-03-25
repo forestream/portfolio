@@ -128,19 +128,21 @@ export default function App() {
   );
 
   return (
-    <main className="px-[260px] pt-24">
-      <section className="flex h-[100vh] flex-col items-center justify-center gap-4 text-orange-900">
-        <h1 className={twMerge("mb-8 text-4xl font-normal")}>{hello}</h1>
+    <main className="px-4 pt-24 lg:px-[260px] lg:pt-24">
+      <section className="flex h-[100vh] flex-col items-center justify-start gap-4 text-orange-900 lg:justify-center">
+        <h1 className={twMerge("text-lg font-normal lg:mb-8 lg:text-4xl")}>
+          {hello}
+        </h1>
         <h1
           id="introduction"
           ref={addRef}
-          className={twMerge("mb-8 text-6xl font-semibold")}
+          className={twMerge("mb-8 text-2xl font-semibold lg:text-6xl")}
         >
           {introduction}
         </h1>
         <div
           ref={navSwiper.ref as RefObject<HTMLDivElement>}
-          className="relative z-10 mt-8 flex gap-12 text-4xl font-bold opacity-0"
+          className="relative z-10 mt-2 mb-8 flex gap-12 text-xl font-bold opacity-0 lg:mt-8 lg:mb-0 lg:text-4xl"
         >
           <button
             className="cursor-pointer"
@@ -155,53 +157,60 @@ export default function App() {
             프로젝트
           </button>
         </div>
-        <article className="mt-16 flex items-center justify-center overflow-hidden">
+        <article className="flex w-full items-center justify-center overflow-hidden lg:mt-16">
           <div
             id="stack"
             ref={stackRefCallback}
-            className="font-noto-sans flex -translate-y-full flex-wrap items-center gap-6 opacity-0 select-none"
+            className="font-noto-sans flex h-[300px] w-full -translate-y-full flex-col flex-wrap items-start gap-4 opacity-0 select-none lg:h-auto lg:flex-row lg:items-center lg:gap-6"
           >
-            <div className="flex w-[300px] items-center gap-8">
-              <IconHtml className="aspect-square h-18" />
-              <span className="text-3xl font-light">HTML</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconHtml className="aspect-square h-8 lg:h-18" />
+              <span className="text-lg font-light lg:text-3xl">HTML</span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconCss className="aspect-square h-18" />
-              <span className="text-3xl font-light">CSS</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconCss className="aspect-square h-8 lg:h-18" />
+              <span className="text-lg font-light lg:text-3xl">CSS</span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconJavascript className="aspect-square h-18" />
-              <span className="text-3xl font-light">Javascript</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconJavascript className="aspect-square h-8 lg:h-18" />
+              <span className="text-lg font-light lg:text-3xl">Javascript</span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconReact className="aspect-square h-18" />
-              <span className="text-3xl font-light">React</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconReact className="aspect-square h-8 lg:h-18" />
+              <span className="text-lg font-light lg:text-3xl">React</span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconNextJs className="aspect-square h-18" />
-              <span className="text-3xl font-light">Next.js</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconNextJs className="aspect-square h-8 lg:h-18" />
+              <span className="text-lg font-light lg:text-3xl">Next.js</span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconTypescript className="aspect-square h-18" />
-              <span className="text-3xl font-light">Typescript</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconTypescript className="aspect-square h-8 lg:h-18" />
+              <span className="text-lg font-light lg:text-3xl">Typescript</span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconTailwind text={false} className="aspect-square h-18" />
-              <span className="text-3xl font-light">Tailwind CSS</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconTailwind
+                text={false}
+                className="aspect-square h-8 lg:h-18"
+              />
+              <span className="text-baselgt-light lg:text-3xl">
+                Tailwind CSS
+              </span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconTanstackQuery className="aspect-square h-18" />
-              <span className="text-3xl font-light">Tanstack Query</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconTanstackQuery className="aspect-square h-8 lg:h-18" />
+              <span className="text-baselgt-light lg:text-3xl">
+                Tanstack Query
+              </span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <div className="relative aspect-square h-18">
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <div className="relative aspect-square h-8 lg:h-18">
                 <Image src={zustand} alt="zustand image" fill />
               </div>
-              <span className="text-3xl font-light">Zustand</span>
+              <span className="text-baselgt-light lg:text-3xl">Zustand</span>
             </div>
-            <div className="flex w-[300px] items-center gap-8">
-              <IconFirebase className="aspect-square h-18 w-min" />
-              <span className="text-3xl font-light">Firebase</span>
+            <div className="flex items-center gap-2 lg:w-[300px] lg:gap-8">
+              <IconFirebase className="aspect-square h-8 w-min lg:h-18" />
+              <span className="text-baselgt-light lg:text-3xl">Firebase</span>
             </div>
           </div>
         </article>

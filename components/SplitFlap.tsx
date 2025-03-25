@@ -52,7 +52,7 @@ export function SplitFlapCard({ char, mode = "open" }: SplitFlapCardProps) {
   }, [char, getRandom, mode]);
 
   return (
-    <div className="relative w-10">
+    <div className="relative h-12 w-10 lg:h-auto">
       <div
         ref={upper}
         className={twMerge(
@@ -60,7 +60,7 @@ export function SplitFlapCard({ char, mode = "open" }: SplitFlapCardProps) {
         )}
       >
         <p className="flex h-[200%] items-center justify-center">
-          <span className="flex items-center justify-center text-2xl text-white">
+          <span className="flex items-center justify-center text-lg text-white lg:text-2xl">
             {char}
           </span>
         </p>
@@ -73,7 +73,7 @@ export function SplitFlapCard({ char, mode = "open" }: SplitFlapCardProps) {
         )}
       >
         <p className="flex h-[200%] -translate-y-1/2 items-center justify-center">
-          <span className="flex items-center justify-center text-2xl text-white">
+          <span className="flex items-center justify-center text-lg text-white lg:text-2xl">
             {char}
           </span>
         </p>
@@ -107,8 +107,8 @@ export default function SplitFlap({
 
   return (
     <div
-      className={twMerge("relative select-none", className)}
-      style={{ width: splitText.length * 54 + "px", height: 58 + "px" }}
+      className={twMerge("relative h-10 select-none lg:h-15", className)}
+      style={{ width: splitText.length * 54 + "px" }}
       {...props}
     >
       <div className="absolute flex w-full gap-1">
