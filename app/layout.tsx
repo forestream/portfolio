@@ -50,12 +50,12 @@ export default function RootLayout({
           {children}
         </SplitFlapProvider>
         <GoToTop />
-        <footer className="flex flex-col justify-end px-6 py-4 text-sm font-bold lg:flex-row lg:px-[300px] lg:py-12">
+        <footer className="flex flex-col justify-end px-6 py-4 text-sm font-bold md:px-20 lg:flex-row lg:px-[300px] lg:py-12">
           <p className="mb-4 grow lg:mb-0">
             <span className="block">조한빈 포트폴리오</span>
           </p>
           <div className="mb-12 flex items-center gap-2 lg:mb-0">
-            <p className="font-normal">
+            <p className="font-normal md:grow">
               프로젝트별 자세한 설명은 노션에서 확인하실 수 있습니다.
             </p>
             <div className="relative h-6 w-6 transition-opacity hover:opacity-70">

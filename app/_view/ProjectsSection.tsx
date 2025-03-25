@@ -27,7 +27,7 @@ export default function ProjectsSection({
       <ProjectArticleProvider>
         <Link
           href="https://slid-todo-xi.vercel.app/"
-          className="inline-block"
+          className="mt-24 inline-block"
           target="_blank"
         >
           <h1 className="font-noto-sans mb-8 flex items-end gap-2 text-4xl font-bold text-orange-950 transition-colors hover:text-orange-900">
