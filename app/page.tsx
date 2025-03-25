@@ -198,13 +198,13 @@ export default function App() {
                 text={false}
                 className="aspect-square h-8 md:h-18"
               />
-              <span className="text-baselgt-light md:text-3xl">
+              <span className="text-lg font-light md:text-3xl">
                 Tailwind CSS
               </span>
             </div>
             <div className="flex items-center gap-2 md:w-[300px] md:gap-8">
               <IconTanstackQuery className="aspect-square h-8 md:h-18" />
-              <span className="text-baselgt-light md:text-3xl">
+              <span className="text-lg font-light md:text-3xl">
                 Tanstack Query
               </span>
             </div>
@@ -212,11 +212,11 @@ export default function App() {
               <div className="relative aspect-square h-8 md:h-18">
                 <Image src={zustand} alt="zustand image" fill />
               </div>
-              <span className="text-baselgt-light md:text-3xl">Zustand</span>
+              <span className="text-lg font-light md:text-3xl">Zustand</span>
             </div>
             <div className="flex items-center gap-2 md:w-[300px] md:gap-8">
               <IconFirebase className="aspect-square h-8 w-min md:h-18" />
-              <span className="text-baselgt-light md:text-3xl">Firebase</span>
+              <span className="text-lg font-light md:text-3xl">Firebase</span>
             </div>
           </div>
         </article>
