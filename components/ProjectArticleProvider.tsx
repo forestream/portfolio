@@ -19,7 +19,7 @@ export function ProjectArticleDescription({ children }: PropsWithChildren) {
   return (
     <div
       ref={(node) => manageRef(node, swiper.ref)}
-      className="text-lg font-semibold text-orange-950"
+      className="text-base font-semibold text-orange-950 lg:text-lg"
     >
       {children}
     </div>
@@ -31,7 +31,7 @@ export function ProjectArticleContent({ children }: PropsWithChildren) {
 
   return (
     <div
-      className="flex gap-8 overflow-hidden"
+      className="flex flex-col gap-8 overflow-hidden lg:flex-row"
       ref={(node) => manageRef(node, io.addRef)}
     >
       {children}

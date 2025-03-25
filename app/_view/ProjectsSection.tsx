@@ -27,7 +27,7 @@ export default function ProjectsSection({
       <ProjectArticleProvider>
         <Link
           href="https://slid-todo-xi.vercel.app/"
-          className="inline-block"
+          className="mt-24 inline-block"
           target="_blank"
         >
           <h1 className="font-noto-sans mb-8 flex items-end gap-2 text-4xl font-bold text-orange-950 transition-colors hover:text-orange-900">
@@ -37,13 +37,13 @@ export default function ProjectsSection({
         </Link>
         <ProjectArticleContent>
           <Link href="https://slid-todo-xi.vercel.app/" target="_blank">
-            <div className="relative h-[350px] w-[600px] rounded bg-white shadow-lg">
+            <div className="relative aspect-video w-full rounded bg-white shadow-lg lg:aspect-auto lg:h-[350px] lg:w-[600px]">
               <Image
                 className="shadow-lg transition-transform hover:-translate-y-1"
                 src={images.slidTodo}
                 alt="Slid To-do 메인"
                 fill
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: "cover" }}
               />
             </div>
           </Link>
@@ -82,10 +82,10 @@ export default function ProjectsSection({
           동그리나
         </h1>
         <ProjectArticleContent>
-          <CarouselClient className="h-[350px] w-[600px] rounded bg-white shadow-lg">
+          <CarouselClient className="aspect-video w-full rounded bg-white shadow-lg lg:h-[350px] lg:w-[600px]">
             <CarouselContent>
               <CarouselItem>
-                <div className="relative h-[350px] w-[600px]">
+                <div className="relative aspect-video w-full lg:h-[350px] lg:w-[600px]">
                   <Image
                     src={images.donggrinaMain}
                     alt="동그리나 메인 이미지"
@@ -95,7 +95,7 @@ export default function ProjectsSection({
                 </div>
               </CarouselItem>
               <CarouselItem>
-                <div className="relative h-[350px] w-[600px]">
+                <div className="relative aspect-video w-full lg:h-[350px] lg:w-[600px]">
                   <Image
                     src={images.donggrinaCalendar}
                     alt="동그리나 일정 이미지"
@@ -151,7 +151,7 @@ export default function ProjectsSection({
         </Link>
         <ProjectArticleContent>
           <Link href="https://synergy10.vercel.app/" target="_blank">
-            <div className="relative h-[350px] w-[600px] rounded bg-white shadow-lg">
+            <div className="relative aspect-video w-full rounded bg-white shadow-lg lg:aspect-auto lg:h-[350px] lg:w-[600px]">
               <Image
                 src={images.synergy}
                 alt="시너지 메인 이미지"
@@ -182,7 +182,7 @@ export default function ProjectsSection({
           리액트 구현
         </h1>
         <ProjectArticleContent>
-          <div className="relative h-[350px] w-[600px] rounded bg-white shadow-lg">
+          <div className="relative aspect-video w-full rounded bg-white shadow-lg lg:aspect-auto lg:h-[350px] lg:w-[600px]">
             <Image
               src={images.jsReact}
               alt="시너지 메인 이미지"
